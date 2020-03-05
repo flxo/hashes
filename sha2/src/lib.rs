@@ -84,7 +84,7 @@ mod consts;
 mod sha256_utils;
 #[cfg(any(not(feature = "asm"), target_arch = "aarch64"))]
 mod sha512_utils;
-#[cfg(feature = "asm-aarch64")]
+#[cfg(all(target_arch = "aarch64", not(target_os = "android")))]
 mod aarch64;
 mod sha256;
 mod sha512;
